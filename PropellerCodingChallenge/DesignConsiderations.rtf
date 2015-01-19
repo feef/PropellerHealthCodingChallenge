@@ -1,0 +1,51 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1343\cocoasubrtf160
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 Thoughts on the expanded insights view:\
+\
+There were a few different ways I could think to do the expanded insights view: I could push to a new view controller for each insight, I could overlay the expanded insight in a view on top of the current insight table (like a photo-viewer in most social applications), or I could expand the collapsed insight cell to show the detailed content.\
+\
+Pushing to a new view controller certainly would have been the easiest. The transition to the expanded insight would be handled for me and the content, no matter how large, would be easy to display in a scrollview in the pushed view controller.\
+\
+However, this system would, in my opinion, also prove to be the most annoying implementation for the user. This system would cause a view controller to appear every time a cell is pressed which, if you're not all that tech-savvy or have big, punchy fingers, could happen in error a lot. After pressing the cell, the user is on a completely different page with, if I kept with normal iOS conventions, only a small button in the top left corner of the screen to go back to the prior screen. Furthermore, after finishing reading an insight, the user is left on a useless page (one where the only option is to press back) UNLESS some very clever system for viewing multiple insights in this view controller was implemented. However, being taken to a page where a bunch of full-page insights could be viewed at once, I feared, would only add to the users' confusion.\
+\
+The second system I considered was the full-page, "photo-viewer"-style overlay. This too had the drawback of needing to escape the overlay in some way, but I figured it might be overcome by a clever bit of gesture-recognition such that pulling up on the bottom of the overlay would dismiss it, leaving a more intuitive system with less dramatic transitions.\
+\
+This too, however, had issues that I viewed as unacceptable. An insight selected from the insights list would fill the screen, but which insight was pressed might not be immediately clear (a problem in both this and the prior system) and a gesture-recognition-reliant system would, without lots of careful tweaking and even more careful testing, certainly cause issues for some clunky-fingered users.\
+\
+So, with these systems largely ruled out, I turned to the design of an expanding cell. This system allows the user to stay on the list page while viewing an insight, gives context to which insight was expanded (by expanding directly from the condensed version), and can allow users to easily bookmark or compare insights by simply leaving them open.\
+\
+Unfortunately, this last design is a bit more challenging to code than the former two. There are sensitive areas surrounding the animation of cell expansion, keeping track of which cells are expanded, and creating reusable, expandable cells that don't bog down the rest of the system with unnecessary, unseen views when they are condensed.\
+\
+expanding cell / detail view design:\
+\
+Starting off, I knew I wanted to design a system that was versatile enough to accommodate various forms data-driven displays. I wanted variable cell heights and data detail displays within cells that could be easily manipulated and used in different views. By doing this, I'd have components that could be reused across the application, maintaining a consistent, easily updatable visual motif. Keeping in mind this primary goal and the overall system shape described in the prior section, I set off to building.\
+\
+I originally started working with a UITableViewCell as the reloading mechanisms of a tableview are more familiar to me. However, drawbacks related to how cell subviews are managed, namely how the "contentView" of a cell doesn't respond to cell size changes as would normal views, and difficulties creating the "card" feel led me to instead use a UICollectionView-Cell / -Controller.\
+\
+The collectionView setup came with it's own set of difficulties, mainly the lack of a "heightForRowAtIndexPath" method that I was leveraging in the tableView for creating expanding cells, but all of them were rather straightforward. The "heightForRowAtIndexPath" method was imitated by a 3rd-party framework built on UICollectionView that I had utilized in another app and some clever debugging / googling eventually brought me to a state of stable, clean expanding animations. With the cells and animations in a workable state, I turned my attention to the detail view inside the cell.\
+\
+Like the cell, I wanted to the detail view to be easily interchangeable and have a flexible layout such that it could be used in many spots across the application. Fortunately, the overall design of this view was very straightforward and needed little attention aside from some well-thought-out constraints in its xib. What did trip me up, however, were the graphs that would be hosted within these views.\
+\
+graph design:\
+\
+Prior to this application, I had minimal experience in graphing data (only creating a very basic sound visualizer in college) but needed to graph patient data for this challenge. I began by researching graphing libraries for iOS; reading reviews, looking at sample code, and tweaking sample projects to see what could be done with a particular graphing library.\
+\
+Initially, I settled on the JBChartView because of it's beautiful look, interactiveness, and plug-and-play API. I spent a couple hours playing with it, eventually getting it to draw data as I was expecting but without the presence of a labeled y-axis. I had figured the feature was buried somewhere in the documentation or perhaps easily code-able, but after a couple more hours of struggling, I decided to take a stab at a second graphing library: CorePlot.\
+\
+CorePlot was second on my list for lots of reasons: it isn't as visually appealing, it takes more setup, and the documentation was far more confusing. It turned out, however, that it was also far more powerful, customizable, and generally more appealing for this application. Relying heavily on chunks of code from the sample projects, I took to setting up CorePlot and, a few details aside, had it behaving as I'd like within a few hours. It's still not as easy to manipulate or pretty as I'd like it, but it's certainly a solid start into graphing data. It was at this point I turned my attention to getting actual data into the graphs (until now I had used randomized points), doing model refactoring, and adding on extra features.\
+\
+Extra features:\
+\
+I decided to add a couple pieces of flair to this project, one development aide and one UI interaction.\
+\
+The UI interaction is the ability to share the graph images as an image. Tapping on a graph will bring up the iOS share sheet, allowing you to send a copy of the graph image via the normal channels or save the image to your device.\
+\
+The developmental aide comes in the form of an image renderer that automatically creates resizable images and an image view that automatically uses them. This system is utilized by both the cell and the data detail view to create the rounded corners without incurring the highly expensive rounding operation. Additionally, the image generator can be used to quickly change the app over to a new color scheme without the need to bother a graphic designer for new images.\
+\
+Both of these extra features could use some TLC, certainly, but I think they're nice little features and would certainly be tools I'd like to develop further.\
+\
+}

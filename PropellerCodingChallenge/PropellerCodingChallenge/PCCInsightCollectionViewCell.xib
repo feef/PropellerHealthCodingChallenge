@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="PCCInsightCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="306" height="317"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="306" height="317"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V7S-oB-MGP" customClass="PCCImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="306" height="317"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3P-ZY-h3e">
+                        <rect key="frame" x="0.0" y="0.0" width="306" height="84"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.70000000000000018" translatesAutoresizingMaskIntoConstraints="NO" id="1Kv-3P-33U">
+                                <rect key="frame" x="48" y="8" width="210" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="xO2-rs-Sfm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collapseArrow" translatesAutoresizingMaskIntoConstraints="NO" id="ItU-KJ-ElY">
+                                <rect key="frame" x="266" y="26" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="OV6-NN-ONQ"/>
+                                    <constraint firstAttribute="height" constant="32" id="hTL-8g-K1M"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000027" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-1r-joz">
+                                <rect key="frame" x="48" y="40" width="210" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Mky-NE-x5p">
+                                <rect key="frame" x="8" y="26" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="98k-i0-Phu"/>
+                                    <constraint firstAttribute="height" constant="32" id="nP2-XM-S6c"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pbf-1r-joz" firstAttribute="leading" secondItem="Mky-NE-x5p" secondAttribute="trailing" constant="8" id="0HN-at-RcT"/>
+                            <constraint firstItem="Mky-NE-x5p" firstAttribute="leading" secondItem="V3P-ZY-h3e" secondAttribute="leading" constant="8" id="3PC-SR-Dcv"/>
+                            <constraint firstAttribute="centerY" secondItem="Mky-NE-x5p" secondAttribute="centerY" id="CZN-kQ-mTd"/>
+                            <constraint firstItem="ItU-KJ-ElY" firstAttribute="leading" secondItem="1Kv-3P-33U" secondAttribute="trailing" constant="8" id="Dov-XF-YF6"/>
+                            <constraint firstAttribute="height" constant="84" id="KXQ-FJ-vOV"/>
+                            <constraint firstItem="1Kv-3P-33U" firstAttribute="top" secondItem="V3P-ZY-h3e" secondAttribute="top" constant="8" id="MDU-1y-3QU"/>
+                            <constraint firstAttribute="trailing" secondItem="ItU-KJ-ElY" secondAttribute="trailing" constant="8" id="VHS-T2-Hqj"/>
+                            <constraint firstItem="1Kv-3P-33U" firstAttribute="leading" secondItem="Mky-NE-x5p" secondAttribute="trailing" constant="8" id="iAt-wk-7EY"/>
+                            <constraint firstItem="pbf-1r-joz" firstAttribute="top" secondItem="1Kv-3P-33U" secondAttribute="bottom" priority="999" constant="8" id="iZe-XI-SxU"/>
+                            <constraint firstAttribute="centerY" secondItem="ItU-KJ-ElY" secondAttribute="centerY" id="jQH-UD-xZi"/>
+                            <constraint firstItem="ItU-KJ-ElY" firstAttribute="leading" secondItem="pbf-1r-joz" secondAttribute="trailing" constant="8" id="vYT-So-adN"/>
+                            <constraint firstAttribute="bottom" secondItem="pbf-1r-joz" secondAttribute="bottom" constant="8" id="z6M-oO-ec6"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wkB-dm-zE9">
+                        <rect key="frame" x="0.0" y="84" width="306" height="233"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="V7S-oB-MGP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="21B-ZY-GSc"/>
+                <constraint firstItem="V3P-ZY-h3e" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5T1-w2-nCa"/>
+                <constraint firstAttribute="trailing" secondItem="V3P-ZY-h3e" secondAttribute="trailing" id="E6x-ma-LJD"/>
+                <constraint firstItem="V3P-ZY-h3e" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ie5-C7-jjb"/>
+                <constraint firstAttribute="trailing" secondItem="V7S-oB-MGP" secondAttribute="trailing" id="W6E-q8-IDZ"/>
+                <constraint firstItem="wkB-dm-zE9" firstAttribute="top" secondItem="V3P-ZY-h3e" secondAttribute="bottom" id="Xt4-os-28c"/>
+                <constraint firstItem="wkB-dm-zE9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="daN-sD-ceq"/>
+                <constraint firstAttribute="bottom" secondItem="wkB-dm-zE9" secondAttribute="bottom" id="fXk-Lo-dv4"/>
+                <constraint firstAttribute="trailing" secondItem="wkB-dm-zE9" secondAttribute="trailing" id="n0W-zJ-lgc"/>
+                <constraint firstAttribute="bottom" secondItem="V7S-oB-MGP" secondAttribute="bottom" id="rjv-sX-ayE"/>
+                <constraint firstItem="V7S-oB-MGP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="z77-RH-zsB"/>
+            </constraints>
+            <size key="customSize" width="369" height="257"/>
+            <connections>
+                <outlet property="backgroundImageView" destination="V7S-oB-MGP" id="nfp-Y9-Qq0"/>
+                <outlet property="condensedCellViewHeightConstraint" destination="KXQ-FJ-vOV" id="0yq-CB-pdn"/>
+                <outlet property="detailViewContainer" destination="wkB-dm-zE9" id="9cA-ua-Jya"/>
+                <outlet property="expandIconImageView" destination="ItU-KJ-ElY" id="hcM-AO-sxb"/>
+                <outlet property="headlineLabel" destination="1Kv-3P-33U" id="YlB-SM-XBx"/>
+                <outlet property="headlineLabelHeightConstraint" destination="xO2-rs-Sfm" id="al8-9S-dOd"/>
+                <outlet property="headlineLabelTopConstraint" destination="MDU-1y-3QU" id="AsZ-Qg-7BA"/>
+                <outlet property="insightIconImageView" destination="Mky-NE-x5p" id="2KA-al-dCN"/>
+                <outlet property="messageLabel" destination="pbf-1r-joz" id="yvl-aL-3gR"/>
+            </connections>
+            <point key="canvasLocation" x="251" y="348.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="collapseArrow" width="32" height="32"/>
+        <image name="star" width="50" height="50"/>
+    </resources>
+</document>

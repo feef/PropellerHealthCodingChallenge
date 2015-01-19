@@ -1,0 +1,16 @@
+PODS:
+  - CHTCollectionViewWaterfallLayout (0.8)
+  - CorePlot (1.5.1)
+  - JSONModel (1.0.1)
+
+DEPENDENCIES:
+  - CHTCollectionViewWaterfallLayout
+  - CorePlot
+  - JSONModel
+
+SPEC CHECKSUMS:
+  CHTCollectionViewWaterfallLayout: 14b7950cbe45ae9297e7759148d69b022bac047d
+  CorePlot: b15cb1a9a687b9576545104248d6e22033e678bb
+  JSONModel: 634100aaacbd89811bc8a03da209356e5989c569
+
+COCOAPODS: 0.35.0
